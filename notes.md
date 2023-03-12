@@ -1,4 +1,4 @@
-Here's a detailed explanation of the code in Emotion_recognization.py:
+##  Here's a detailed explanation of the code in Emotion_recognization.py:
 
 1. The first few lines import the required Python modules, including pandas (for data analysis), numpy (for numerical operations), and Keras (for building and training neural networks).
 2. Next, the script loads the FER2013 dataset from a CSV file using pandas' read_csv() method. This dataset contains 48x48 grayscale images of faces and their corresponding emotional labels (anger, disgust, fear, happiness, sadness, surprise, and neutral). The dataset is split into three sets: training, validation, and testing.
@@ -12,4 +12,10 @@ Here's a detailed explanation of the code in Emotion_recognization.py:
 10. Finally, the model is trained on the training data using the fit() method. This method takes several arguments, including the input data (X_train), the target labels (train_y), the batch size, the number of epochs, and the validation data (X_test and test_y). During training, the model updates its weights to minimize the loss function, and the accuracy is computed and displayed after each epoch. Once training is complete, the model is saved to disk in JSON and HDF5 format using the to_json() and save_weights() methods, respectively.
 
 
+## videoTester.py program
 
+This is a Python program that performs facial emotion analysis in real-time using a pre-trained deep learning model. The program uses the OpenCV library to capture video from the webcam and detect faces in each frame using a pre-trained Haar cascade classifier. Once a face is detected, the program crops the image to the area containing the face, resizes it to 48x48 pixels, and passes it through a deep learning model to predict the facial expression.
+
+The deep learning model used is loaded from two files, 'fer.json' and 'fer.h5', which contain the architecture and weights of the model, respectively. The predicted emotion is then displayed on the screen next to a rectangle drawn around the detected face.
+
+The program continuously captures frames from the webcam until the user presses the 'q' key, at which point the program exits and the webcam is released.
